@@ -15,11 +15,11 @@ def python_art(marker: str, thickness: int) -> None:
     for i in range((thickness + 1) // 2):
         print((c * thickness * 5).center(thickness * 6))
 
-        # Bottom Pillars
+    # Bottom Pillars
     for i in range(thickness + 1):
         print((c * thickness).center(thickness * 2) + (c * thickness).center(thickness * 6))
 
-        # Bottom Cone
+    # Bottom Cone
     for i in range(thickness):
         print(((c * (thickness - i - 1)).rjust(thickness) + c +
                (c * (thickness - i - 1)).ljust(thickness)).rjust(thickness * 6))
@@ -106,6 +106,6 @@ if __name__ == '__main__':
                     print('\nGoodbye!')
                     break
                 case _:
-                    print('\nUndefined option\n')
+                    print('\nUndefined option: Try again\n')
         except ValueError as error:
             print('\nError (%s) has occurred, try again' % error)
