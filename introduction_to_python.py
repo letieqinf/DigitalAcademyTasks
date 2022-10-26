@@ -39,6 +39,7 @@ def carpet_designer(width: int) -> None:
     length = 3 * width
 
     print(('_' * length).center(length))
+
     for pattern_counter in range(3, width, 2):
         print('|'.ljust(0) + ('/=' + '|=' * pattern_counter + '\\').center(length - 2) + '|'.rjust(0))
 
@@ -48,6 +49,18 @@ def carpet_designer(width: int) -> None:
         print('|'.ljust(0) + ('\\=' + '|=' * pattern_counter + '/').center(length - 2) + '|'.rjust(0))
 
     print(('\u203e' * length).center(length), end='\n\n')
+
+
+def multiply_digits(number: int) -> int:
+    if number == 0:
+        return 0
+
+    mult = 1
+    for digit in list(map(int, str(number))):
+        if digit != 0:
+            mult *= digit
+
+    return mult
 
 
 if __name__ == '__main__':
@@ -85,6 +98,10 @@ if __name__ == '__main__':
                 case 5:
                     carpet_width = int(input('\nEnter your desired carpet width: '))
                     carpet_designer(carpet_width)
+                case 6:
+                    num = int(input('\nEnter any number: '))
+                    result = multiply_digits(num)
+                    print(result, end='\n\n')
                 case 0:
                     print('\nGoodbye!')
                     break
