@@ -43,9 +43,8 @@ def three_words(string: str) -> bool:
             continue
         word_counter += 1
 
-    for item in amount_between:
-        if item >= 3:
-            return True
+    if max(amount_between) >= 3:
+        return True
 
     return False
 
